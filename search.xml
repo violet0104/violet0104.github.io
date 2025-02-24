@@ -11,6 +11,12 @@
         <content type="html"><![CDATA[<h1 id="如何写一篇博客"><a href="#如何写一篇博客" class="headerlink" title="如何写一篇博客"></a>如何写一篇博客</h1><p>在 git 命令行输入以下命令，命名为 “demo”，就创建好了一篇博客</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new post <span class="string">&quot;demo&quot;</span></span><br></pre></td></tr></table></figure><p>这时，在<code>Blog/source/_posts</code>目录下就会多一个名为 demo 的 .md 文件，这就是</p><p>我们刚刚创建的博客，在这个文件里，我们可以写自己的博客。</p>]]></content>
       
       
+      <categories>
+          
+          <category> 网站使用 </category>
+          
+      </categories>
+      
       
         <tags>
             
