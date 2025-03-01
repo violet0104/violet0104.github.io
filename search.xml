@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>python 爬虫学习</title>
+      <link href="/2025/03/01/python%E7%88%AC%E8%99%AB%E5%AD%A6%E4%B9%A0/"/>
+      <url>/2025/03/01/python%E7%88%AC%E8%99%AB%E5%AD%A6%E4%B9%A0/</url>
+      
+        <content type="html"><![CDATA[<h1 id="爬取豆瓣电影-Top250-影名和评分"><a href="#爬取豆瓣电影-Top250-影名和评分" class="headerlink" title="爬取豆瓣电影 Top250 影名和评分"></a>爬取豆瓣电影 Top250 影名和评分</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> page <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,<span class="number">11</span>):</span><br><span class="line">    res = requests.get(</span><br><span class="line">    url = <span class="string">f&#x27;https://movie.douban.com/top250?start=<span class="subst">&#123;(page - <span class="number">1</span>) * <span class="number">25</span>&#125;</span>&#x27;</span>,</span><br><span class="line">    <span class="comment"># 如果不设置HTTP请求头中的User-Agent，豆瓣会检测出不是浏览器而阻止我们的请求。</span></span><br><span class="line">    <span class="comment"># 通过get函数的headers参数设置User-Agent的值，具体的值可以在浏览器的开发者工具查看到。</span></span><br><span class="line">    <span class="comment"># 用爬虫访问大部分网站时，将爬虫伪装成来自浏览器的请求都是非常重要的一步。</span></span><br><span class="line">    headers = &#123;</span><br><span class="line">        <span class="string">&#x27;User-Agent&#x27;</span>: <span class="string">&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:135.0) Gecko/20100101 Firefox/135.0&#x27;</span></span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 通过正则表达式获取class属性为title且标签体不以&amp;开头的span标签并用捕获组提取标签内容</span></span><br><span class="line">    pattern1 = re.<span class="built_in">compile</span>(<span class="string">r&#x27;&lt;span\sclass=&quot;title&quot;&gt;([^&amp;]*?)&lt;/span&gt;&#x27;</span>)</span><br><span class="line">    titles = pattern1.findall(res.text)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 通过正则表达式获取class属性为rating_num的span标签并用捕获组提取标签内容</span></span><br><span class="line">    pattern2 = re.<span class="built_in">compile</span>(<span class="string">r&#x27;&lt;span class=&quot;rating_num&quot;.*?&gt;(.*?)&lt;/span&gt;&#x27;</span>)</span><br><span class="line">    ranks = pattern2.findall(res.text)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 使用zip压缩两个列表，循环遍历所有的电影标题和评分</span></span><br><span class="line">    <span class="keyword">for</span> title, rank <span class="keyword">in</span> <span class="built_in">zip</span>(titles, ranks):</span><br><span class="line">        <span class="built_in">print</span>(title, rank)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 随机休眠1-5秒，避免爬取页面过于频繁</span></span><br><span class="line">    time.sleep(random.random() * <span class="number">4</span> + <span class="number">1</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 爬虫 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>如何写一篇博客</title>
       <link href="/2025/02/24/%E5%A6%82%E4%BD%95%E5%86%99%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"/>
       <url>/2025/02/24/%E5%A6%82%E4%BD%95%E5%86%99%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
