@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>“龙芯杯”备赛学习</title>
+      <link href="/2025/03/07/LoongArch-%E5%AD%A6%E4%B9%A0/"/>
+      <url>/2025/03/07/LoongArch-%E5%AD%A6%E4%B9%A0/</url>
+      
+        <content type="html"><![CDATA[<h1 id="1"><a href="#1" class="headerlink" title="1"></a>1</h1><h2 id="取指阶段的实现"><a href="#取指阶段的实现" class="headerlink" title="取指阶段的实现"></a>取指阶段的实现</h2><p>​取指阶段取出 <strong>指令寄存器</strong> 中的指令，同时，<strong>PC值递增</strong>，准备取下一条指令，包括PC，IF&#x2F;ID 两个模块。</p><h2 id="译码阶段的实现"><a href="#译码阶段的实现" class="headerlink" title="译码阶段的实现"></a>译码阶段的实现</h2><p>​将取到的指令进行译码：给出要进行的运算类型，以及参与运算的操作数，包括 Regfile、ID 和 ID&#x2F;EX 三个模块。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> LoongArch </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>python 爬虫学习</title>
       <link href="/2025/03/01/python%E7%88%AC%E8%99%AB%E5%AD%A6%E4%B9%A0/"/>
       <url>/2025/03/01/python%E7%88%AC%E8%99%AB%E5%AD%A6%E4%B9%A0/</url>
