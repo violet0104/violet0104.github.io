@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>test</title>
+      <link href="/2026/04/30/test/"/>
+      <url>/2026/04/30/test/</url>
+      
+        <content type="html"><![CDATA[<h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1><p>111</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 测试 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Hello World</title>
       <link href="/2026/04/30/hello-world/"/>
       <url>/2026/04/30/hello-world/</url>
