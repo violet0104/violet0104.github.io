@@ -4,25 +4,6 @@
   
     
     <entry>
-      <title>test</title>
-      <link href="/2026/05/01/test/"/>
-      <url>/2026/05/01/test/</url>
-      
-        <content type="html"><![CDATA[<p>hello test</p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 写博客 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Hello World</title>
       <link href="/2026/04/30/hello-world/"/>
       <url>/2026/04/30/hello-world/</url>
@@ -36,61 +17,11 @@
     
     
     <entry>
-      <title>学习日记</title>
-      <link href="/2025/03/09/%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/"/>
-      <url>/2025/03/09/%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/</url>
+      <title>Hexo 写博客指南</title>
+      <link href="/2025/02/24/Hexo%E5%86%99%E5%8D%9A%E5%AE%A2%E6%8C%87%E5%8D%97/"/>
+      <url>/2025/02/24/Hexo%E5%86%99%E5%8D%9A%E5%AE%A2%E6%8C%87%E5%8D%97/</url>
       
-        <content type="html"><![CDATA[<p>1.。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> 学习日记 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 学习记录 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>python 爬虫学习</title>
-      <link href="/2025/03/01/python%E7%88%AC%E8%99%AB%E5%AD%A6%E4%B9%A0/"/>
-      <url>/2025/03/01/python%E7%88%AC%E8%99%AB%E5%AD%A6%E4%B9%A0/</url>
-      
-        <content type="html"><![CDATA[<h1 id="爬取豆瓣电影-Top250-影名和评分"><a href="#爬取豆瓣电影-Top250-影名和评分" class="headerlink" title="爬取豆瓣电影 Top250 影名和评分"></a>爬取豆瓣电影 Top250 影名和评分</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> page <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,<span class="number">11</span>):</span><br><span class="line">    res = requests.get(</span><br><span class="line">    url = <span class="string">f&#x27;https://movie.douban.com/top250?start=<span class="subst">&#123;(page - <span class="number">1</span>) * <span class="number">25</span>&#125;</span>&#x27;</span>,</span><br><span class="line">    <span class="comment"># 如果不设置HTTP请求头中的User-Agent，豆瓣会检测出不是浏览器而阻止我们的请求。</span></span><br><span class="line">    <span class="comment"># 通过get函数的headers参数设置User-Agent的值，具体的值可以在浏览器的开发者工具查看到。</span></span><br><span class="line">    <span class="comment"># 用爬虫访问大部分网站时，将爬虫伪装成来自浏览器的请求都是非常重要的一步。</span></span><br><span class="line">    headers = &#123;</span><br><span class="line">        <span class="string">&#x27;User-Agent&#x27;</span>: <span class="string">&#x27;Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:135.0) Gecko/20100101 Firefox/135.0&#x27;</span></span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 通过正则表达式获取class属性为title且标签体不以&amp;开头的span标签并用捕获组提取标签内容</span></span><br><span class="line">    pattern1 = re.<span class="built_in">compile</span>(<span class="string">r&#x27;&lt;span\sclass=&quot;title&quot;&gt;([^&amp;]*?)&lt;/span&gt;&#x27;</span>)</span><br><span class="line">    titles = pattern1.findall(res.text)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 通过正则表达式获取class属性为rating_num的span标签并用捕获组提取标签内容</span></span><br><span class="line">    pattern2 = re.<span class="built_in">compile</span>(<span class="string">r&#x27;&lt;span class=&quot;rating_num&quot;.*?&gt;(.*?)&lt;/span&gt;&#x27;</span>)</span><br><span class="line">    ranks = pattern2.findall(res.text)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 使用zip压缩两个列表，循环遍历所有的电影标题和评分</span></span><br><span class="line">    <span class="keyword">for</span> title, rank <span class="keyword">in</span> <span class="built_in">zip</span>(titles, ranks):</span><br><span class="line">        <span class="built_in">print</span>(title, rank)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 随机休眠1-5秒，避免爬取页面过于频繁</span></span><br><span class="line">    time.sleep(random.random() * <span class="number">4</span> + <span class="number">1</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      <categories>
-          
-          <category> python </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 爬虫 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>如何写一篇博客</title>
-      <link href="/2025/02/24/%E5%A6%82%E4%BD%95%E5%86%99%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"/>
-      <url>/2025/02/24/%E5%A6%82%E4%BD%95%E5%86%99%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/</url>
-      
-        <content type="html"><![CDATA[<h1 id="如何写一篇博客"><a href="#如何写一篇博客" class="headerlink" title="如何写一篇博客"></a>如何写一篇博客</h1><p>在 git 命令行输入以下命令，命名为 “demo”，就创建好了一篇博客</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new post <span class="string">&quot;demo&quot;</span></span><br></pre></td></tr></table></figure><p>这时，在<code>Blog/source/_posts</code>目录下就会多一个名为 demo 的 .md 文件，这就是</p><p>我们刚刚创建的博客，在这个文件里，我们可以写自己的博客。</p>]]></content>
+        <content type="html"><![CDATA[<h1 id="Hexo-写博客指南"><a href="#Hexo-写博客指南" class="headerlink" title="Hexo 写博客指南"></a>Hexo 写博客指南</h1><h2 id="部署博客"><a href="#部署博客" class="headerlink" title="部署博客"></a>部署博客</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo clean    <span class="comment"># 清理缓存和 public/</span></span><br><span class="line">hexo g        <span class="comment"># 生成静态文件</span></span><br><span class="line">hexo s        <span class="comment"># 本地启动预览</span></span><br><span class="line">hexo d        <span class="comment"># 部署到远程</span></span><br></pre></td></tr></table></figure><h2 id="工作流"><a href="#工作流" class="headerlink" title="工作流"></a>工作流</h2><ol><li><p>写文章：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new post <span class="string">&quot;标题&quot;</span></span><br></pre></td></tr></table></figure></li><li><p>本地预览：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure></li><li><p>部署到 GitHub Pages：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp;&amp; hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure></li></ol>]]></content>
       
       
       <categories>
@@ -105,19 +36,6 @@
             <tag> 写博客 </tag>
             
         </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>first</title>
-      <link href="/2025/02/22/first/"/>
-      <url>/2025/02/22/first/</url>
-      
-        <content type="html"><![CDATA[<p>第一次搭建个人网站和博客，体验拉满了</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># <span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;欢迎━(*｀∀´*)ノ亻!来到violet 的博客&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
       
     </entry>
     
